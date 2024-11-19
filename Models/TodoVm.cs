@@ -4,5 +4,6 @@
     {
         public string TaskTitle { get; set; }
         public string Description { get; set; }
+        public DateOnly TaskDate  { get; set; }
     }
 }
