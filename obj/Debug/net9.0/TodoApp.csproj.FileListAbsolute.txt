@@ -95,3 +95,4 @@ C:\Users\HP\RiderProjects\TodoApp\obj\Debug\net9.0\refint\TodoApp.dll
 C:\Users\HP\RiderProjects\TodoApp\obj\Debug\net9.0\TodoApp.pdb
 C:\Users\HP\RiderProjects\TodoApp\obj\Debug\net9.0\TodoApp.genruntimeconfig.cache
 C:\Users\HP\RiderProjects\TodoApp\obj\Debug\net9.0\ref\TodoApp.dll
+C:\Users\HP\RiderProjects\TodoApp\obj\Debug\net9.0\TodoApp.sourcelink.json

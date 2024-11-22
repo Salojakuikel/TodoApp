@@ -2,6 +2,7 @@
 using TODOApp.Data;
 using TODOApp.Models;
 using TODOApp.Repositories.Interfaces;
+
 using TODOApp.Services.Interfaces;
 
 namespace TODOApp.Controllers
@@ -28,12 +29,12 @@ namespace TODOApp.Controllers
         [HttpPost]
         public IActionResult Index(TodoVm vm)
         {
-            //TodoVm to TodoDto Mapping
+           
             var dto = new TodoDto();
             dto.TaskTitle = vm.TaskTitle;
-            dto.Description = vm.Description;
+            dto.TaskDescription = vm.TaskDescription;
 
-            //Call Create method of Todo Service
+            
             _todoService.Create(dto);
 
             return RedirectToAction("Index");
@@ -44,5 +45,36 @@ namespace TODOApp.Controllers
             var todos = _todoRepository.GetAll();
             return View(todos);
         }
+
+
+        [HttpPost]
+        public IActionResult Update(Guid id, TodoDto dto)
+        {
+            var todo = Database.Todos.FirstOrDefault(t => t.Id == id);
+            todo.TaskTitle = dto.TaskTitle;
+            todo.TaskDescription = dto.TaskDescription;
+            todo.TaskDate = dto.TaskDate;
+            return RedirectToAction("GetTodos");
+
+        }
+
+        public IActionResult Update(Guid id)
+        {
+            var todo = Database.Todos.FirstOrDefault(t => t.Id == id);
+            return View(todo);
+        }
+        
+        public IActionResult Delete(Guid id, TodoDto dto)
+        {
+            var todo = Database.Todos.FirstOrDefault(t => t.Id == id);
+            todo.TaskTitle = dto.TaskTitle;
+            todo.TaskDescription = dto.TaskDescription;
+            todo.TaskDate = dto.TaskDate;
+            return RedirectToAction("GetTodos");
+            return View(todo);
+
+        }
+
     }
+    
 }

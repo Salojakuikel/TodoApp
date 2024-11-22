@@ -4,12 +4,51 @@
     ViewData["Title"] = "Todo App";
 }
 
-
-<h1>Add Todo</h1>
-<form method="post">
-    <input asp-for="TaskTitle" placeholder="Task Title"/>
-    <br/>
-    <input asp-for="Description" placeholder="Description"/>
-    <br/>
-    <button type="submit">Add Todo</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .todo-form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .todo-form-container h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .form-control::placeholder {
+            color: #adb5bd;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="todo-form-container">
+    <h1 class="text-center">Add Todo</h1>
+    <form method="post">
+        <div class="mb-3">
+            <input asp-for="TaskTitle" class="form-control" placeholder="Task Title" />
+        </div>
+        <div class="mb-3">
+            <input asp-for="TaskDescription" class="form-control" placeholder="Description" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Todo</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
